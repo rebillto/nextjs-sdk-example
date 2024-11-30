@@ -12,23 +12,10 @@ import { clubOptions, additionalBenefits } from "../lib/data";
 export default function LATAMPassSubscription() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedClub, setSelectedClub] = useState(null);
-  const [selectedBenefits, setSelectedBenefits] = useState([]);
 
   const handleClubSelect = (club) => {
     setSelectedClub(club);
     setCurrentStep(2);
-  };
-
-  const handleBenefitSelect = (benefit) => {
-    setSelectedBenefits((prev) =>
-      prev.includes(benefit)
-        ? prev.filter((b) => b !== benefit)
-        : [...prev, benefit]
-    );
-  };
-
-  const handleContinue = () => {
-    setCurrentStep(3);
   };
 
   return (
@@ -43,23 +30,9 @@ export default function LATAMPassSubscription() {
           />
         )}
         {currentStep === 2 && (
-          <AdditionalBenefits
-            additionalBenefits={additionalBenefits}
-            selectedBenefits={selectedBenefits}
-            onSelect={handleBenefitSelect}
-            onContinue={handleContinue}
-          />
-        )}
-        {currentStep === 3 && (
           <div className="flex flex-col justify-center md:flex-row md:items-start gap-2 mt-10">
-            <PaymentForm
-              selectedClub={selectedClub}
-              selectedBenefits={selectedBenefits}
-            />
-            <PurchaseSummary
-              selectedClub={selectedClub}
-              selectedBenefits={selectedBenefits}
-            />
+            <PaymentForm selectedClub={selectedClub} />
+            <PurchaseSummary selectedClub={selectedClub} />
           </div>
         )}
       </main>

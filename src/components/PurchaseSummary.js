@@ -1,7 +1,5 @@
-export default function PurchaseSummary({ selectedClub, selectedBenefits }) {
-  const totalPrice =
-    selectedClub.price +
-    selectedBenefits.reduce((sum, benefit) => sum + benefit.price, 0);
+export default function PurchaseSummary({ selectedClub }) {
+  const totalPrice = selectedClub.price;
 
   return (
     <div className="flex justify-center items-start min-h-screen bg-gray-100">
@@ -34,9 +32,7 @@ export default function PurchaseSummary({ selectedClub, selectedBenefits }) {
           </ul>
         </div>
         <p className="mt-4 text-sm text-center">
-          El cobro a la tarjeta se realizará en USD o en la moneda local según
-          el tipo de cambio definido por tu banco. La permanencia mínima para tu
-          suscripción es de 3 meses.
+          La permanencia mínima para tu suscripción es de 3 meses.
         </p>
       </div>
     </div>
