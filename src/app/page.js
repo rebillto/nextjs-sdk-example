@@ -4,12 +4,11 @@ import { useState } from "react";
 import Header from "../components/Header";
 import ProgressBar from "../components/ProgressBar";
 import ClubSelection from "../components/ClubSelection";
-import AdditionalBenefits from "../components/AdditionalBenefits";
 import PurchaseSummary from "../components/PurchaseSummary";
 import PaymentForm from "../components/PaymentForm";
 import { clubOptions, additionalBenefits } from "../lib/data";
 
-export default function LATAMPassSubscription() {
+export default function REBILLPassSubscription() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedClub, setSelectedClub] = useState(null);
 

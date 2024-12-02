@@ -26,7 +26,7 @@ export default function PaymentForm({ selectedClub }) {
   }, [selectedClub, sdkMounted]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-start min-h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-lg shadow-md w-full md:w-[380px] lg:w-[500px]">
         <h2 className="text-2xl font-bold mb-4 text-center">
           Payment Information
